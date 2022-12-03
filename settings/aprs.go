@@ -35,7 +35,7 @@ func (as *APRSSettings) EncodedLongitude() string {
 	fullDegrees := math.Floor(absoluteLongitude)
 	fractionalDegrees := absoluteLongitude - fullDegrees
 	fractionalMinutes := fractionalDegrees * 60.0
-	return fmt.Sprintf("%2.0f%05.2f%s", fullDegrees, fractionalMinutes, direction)
+	return fmt.Sprintf("%3.0f%05.2f%s", fullDegrees, fractionalMinutes, direction)
 }
 
 func (as *APRSSettings) SymbolTable() byte {
