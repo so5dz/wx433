@@ -30,7 +30,7 @@ func readWeather(wx433Settings settings.WX433Settings, wx433Storage storage.WX43
 	temperature := temperatureSum / float64(len(reports))
 	humidity := humiditySum / float64(humidityReadings)
 
-	fmt.Printf("!%s%c%s%c...s...g...t%sh%s %s\n",
+	fmt.Printf("!%s%c%s%cc...s...g...t%sr...p...P...h%sb..... %s\n",
 		wx433Settings.APRS.EncodedLatitude(),
 		wx433Settings.APRS.SymbolTable(),
 		wx433Settings.APRS.EncodedLongitude(),
