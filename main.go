@@ -16,6 +16,9 @@ const (
 )
 
 func main() {
+	if len(os.Args) < 3 {
+		log.Fatalln(os.Args[0], "[operationMode] [settingsFile]")
+	}
 	operationMode := OperationMode(os.Args[1])
 	settingsFile := os.Args[2]
 

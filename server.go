@@ -11,7 +11,7 @@ import (
 )
 
 func runServer(wx433Settings settings.WX433Settings, wx433Storage storage.WX433Storage) error {
-	log.Println("Running in server mode")
+	log.Println("running in server mode")
 
 	channel := make(syslog.LogPartsChannel)
 	handler := syslog.NewChannelHandler(channel)
@@ -32,7 +32,7 @@ func runServer(wx433Settings settings.WX433Settings, wx433Storage storage.WX433S
 				continue
 			}
 			if wx433Settings.IsWeatherDevice(messageObj.Model) {
-				log.Println("AA temperature", messageObj.Temperature, "'C\t humidity", messageObj.Humidity, "%")
+				log.Println("temperature", messageObj.Temperature, "'C\t humidity", messageObj.Humidity, "%")
 				err = wx433Storage.Persist(messageObj)
 				if err != nil {
 					log.Println("unable to persist reading", err)
