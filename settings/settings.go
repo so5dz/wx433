@@ -3,7 +3,7 @@ package settings
 import (
 	"encoding/json"
 	"fmt"
-	"os"
+	"io/ioutil"
 )
 
 type WX433Settings struct {
@@ -16,7 +16,7 @@ type WX433Settings struct {
 }
 
 func (ws *WX433Settings) Parse(filePath string) error {
-	fileBytes, err := os.ReadFile(filePath)
+	fileBytes, err := ioutil.ReadFile(filePath)
 	if err != nil {
 		return err
 	}
