@@ -1,6 +1,6 @@
 module github.com/so5dz/wx433
 
-go 1.18
+go 1.15
 
 require (
 	github.com/mattn/go-sqlite3 v1.14.16
